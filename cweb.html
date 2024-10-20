@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMI Engineering College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00264d;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 2rem;
+            margin: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #004080;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Chatbot Styles */
+        #chatbot {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        #chatbot-header {
+            background-color: #004080;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #chatbot-body {
+            padding: 10px;
+            height: 250px;
+            overflow-y: auto;
+        }
+
+        #chatbot-input {
+            padding: 10px;
+        }
+
+        #chatbot-input input {
+            width: 80%;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #chatbot-input button {
+            padding: 5px;
+            border: none;
+            background-color: #004080;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Chatbot Icon */
+        #chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #004080;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #chatbot-icon img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Name and Email Form */
+        #user-details {
+            display: none;
+            padding: 10px;
+        }
+
+        #user-details input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+        }
+
+        #user-details button {
+            width: 100%;
+            padding: 8px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to DMI Engineering College</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#sports">Sports</a>
+        <a href="#events">Events</a>
+        <a href="#departments">Departments</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>DMI Engineering College is a premier institution committed to providing quality engineering education. Our mission is to develop industry-ready professionals equipped with the necessary skills and knowledge to excel in the competitive world.</p>
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <p>We have consistently achieved academic excellence, with many of our students securing top positions in national and international competitions. Our faculty and students have also published numerous research papers in prestigious journals.</p>
+    </section>
+
+    <section id="sports">
+        <h2>Sports</h2>
+        <p>At DMI Engineering College, we believe in the holistic development of our students. We offer a range of sports activities including football, cricket, basketball, volleyball, and athletics, with state-of-the-art facilities for each.</p>
+    </section>
+
+    <section id="events">
+        <h2>Events</h2>
+        <p>Our college organizes numerous events throughout the year, including technical fests, cultural festivals, workshops, seminars, and guest lectures by industry experts. These events provide students with opportunities to learn, network, and showcase their talents.</p>
+    </section>
+
+    <section id="departments">
+        <h2>Departments</h2>
+        <ul>
+            <li><a href="cse.html">B.E. Computer Science and Engineering</a></li>
+            <li><a href="eee.html">B.E. Electrical and Electronics Engineering</a></li>
+            <li><a href="ece.html">B.E. Electronics and Communication Engineering</a></li>
+            <li><a href="mech.html">B.E. Mechanical Engineering</a></li>
+            <li><a href="ai.html">B.Tech. Artificial Intelligence and Data Science</a></li>
+            <li><a href="it.html">B.Tech. Information Technology</a></li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>DMI Engineering College</p>
+        <p>Address: [Your College Address]</p>
+        <p>Email: info@dmi-engineering.edu</p>
+        <p>Phone: +91 12345 67890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DMI Engineering College. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Chatbot Section -->
+    <div id="chatbot">
+        <div id="chatbot-header">Chat with us</div>
+        <div id="user-details">
+            <p>Please provide your details:</p>
+            <input type="text" id="userName" placeholder="Enter your first name" required />
+            <input type="email" id="userEmail" placeholder="Enter your email" required />
+            <button onclick="saveUserDetails()">Start Chat</button>
+        </div>
+        <div id="chatbot-body" style="display: none;"></div>
+        <div id="chatbot-input" style="display: none;">
+            <input type="text" id="userInput" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon">
+        <img src="chat-icon.png" alt="Chat Icon" />
+    </div>
+
+    <script>
+        const chatbot = document.getElementById('chatbot');
+        const chatbotIcon = document.getElementById('chatbot-icon');
+        const userDetails = document.getElementById('user-details');
+        const chatbotBody = document.getElementById('chatbot-body');
+        const chatbotInput = document.getElementById('chatbot-input');
+        let userName = '';
+        let userEmail = '';
+
+        chatbotIcon.addEventListener('click', function() {
+            if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+                chatbot.style.display = 'block';
+                userDetails.style.display = 'block';
+            } else {
+                chatbot.style.display = 'none';
+            }
+        });
+
+        function saveUserDetails() {
+            userName = document.getElementById('userName').value;
+            userEmail = document.getElementById('userEmail').value;
+
+            if (userName && userEmail) {
+                userDetails.style.display = 'none';
+                chatbotBody.style.display = 'block';
+                chatbotInput.style.display = 'block';
+
+                chatbotBody.innerHTML = `<p><strong>Bot:</strong> Hi ${userName}, how can we assist you today?</p>`;
+            } else {
+                alert('Please provide both name and email.');
+            }
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (userInput) {
+                const userMessage = `<p><strong>You:</strong> ${userInput}</p>`;
+                const botMessage = `<p><strong>Bot:</strong> Thank you, ${userName}. We’ll get back to you soon!</p>`;
+
+               
